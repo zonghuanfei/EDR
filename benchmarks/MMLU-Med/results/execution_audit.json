@@ -1,0 +1,16 @@
+{
+  "verified": true,
+  "coverage": 1089,
+  "labels": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "technical_failure_ids": [
+    78
+  ],
+  "actual_history_masked_calls": 560,
+  "replayed_common_calls": 1530,
+  "recomputed_probability_probes": 3189
+}

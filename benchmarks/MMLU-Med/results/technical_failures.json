@@ -1,0 +1,14 @@
+{
+  "ids": [
+    78
+  ],
+  "records": [
+    {
+      "id": 78,
+      "stage": "initial_elimination",
+      "reason": "The shared initial elimination did not yield all required valid outputs.",
+      "bounded_technical_retry_recorded": true,
+      "scored_incorrect_in_both_conditions": true
+    }
+  ]
+}

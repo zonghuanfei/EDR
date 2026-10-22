@@ -1,0 +1,38 @@
+{
+  "ids": [
+    63,
+    261,
+    307,
+    314
+  ],
+  "records": [
+    {
+      "id": 63,
+      "stage": "initial_elimination",
+      "reason": "The initial elimination did not yield all required valid outputs.",
+      "bounded_technical_retry_recorded": true,
+      "scored_incorrect_in_both_conditions": true
+    },
+    {
+      "id": 261,
+      "stage": "initial_elimination",
+      "reason": "The initial elimination did not yield all required valid outputs.",
+      "bounded_technical_retry_recorded": true,
+      "scored_incorrect_in_both_conditions": true
+    },
+    {
+      "id": 307,
+      "stage": "initial_elimination",
+      "reason": "The initial elimination did not yield all required valid outputs.",
+      "bounded_technical_retry_recorded": true,
+      "scored_incorrect_in_both_conditions": true
+    },
+    {
+      "id": 314,
+      "stage": "initial_elimination",
+      "reason": "The initial elimination did not yield all required valid outputs.",
+      "bounded_technical_retry_recorded": true,
+      "scored_incorrect_in_both_conditions": true
+    }
+  ]
+}

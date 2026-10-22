@@ -1,0 +1,13 @@
+{
+  "verified": true,
+  "coverage": 483,
+  "technical_failure_ids": [
+    63,
+    261,
+    307,
+    314
+  ],
+  "actual_history_masked_calls": 804,
+  "replayed_common_calls": 719,
+  "recomputed_probability_probes": 2346
+}

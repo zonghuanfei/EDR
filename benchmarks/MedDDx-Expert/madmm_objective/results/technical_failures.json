@@ -1,0 +1,10 @@
+{
+  "inherited_initial_failure_ids": [
+    63,
+    261,
+    307,
+    314
+  ],
+  "new_technical_failure_ids": [],
+  "scoring_rule": "Inherited failures retained, counted incorrect, and linked to the parent shared trace."
+}

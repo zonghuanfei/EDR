@@ -1,0 +1,11 @@
+{
+  "verified": true,
+  "coverage": 483,
+  "masked_medical_calls": 1766,
+  "teacher_forced_scoring_calls": 23868,
+  "initial_materials_unchanged": true,
+  "candidate_set_unchanged_by_mask": true,
+  "representative_selector": "native, unchanged",
+  "final_judge": "native, unmasked",
+  "source_paired_results_sha256": "e17130ab743ca13780a46aade7857c56a4e1bc54244f11bbc94e79de45581fac"
+}

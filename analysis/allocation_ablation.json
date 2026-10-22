@@ -1,0 +1,106 @@
+{
+  "dataset": "MedXpertQA",
+  "model": "Qwen3.8-27B-NVFP4",
+  "methods": {
+    "ma_rag_int": {
+      "trace": "benchmarks/MedXpertQA/qwen3.8 27b/traces/ma_rag_int_490.jsonl",
+      "n": 490,
+      "correct": 209,
+      "accuracy": 0.42653061224489797,
+      "subsequent_rounds": 803,
+      "independent_responses": 0,
+      "independent_response_share": 0.0,
+      "allocation_round_counts": {
+        "0": 803
+      },
+      "technical_failure_ids": []
+    },
+    "edr_gated_fixed4": {
+      "trace": "benchmarks/MedXpertQA/qwen3.8 27b/traces/edr_gated_fixed4_490.jsonl",
+      "n": 490,
+      "correct": 214,
+      "accuracy": 0.43673469387755104,
+      "subsequent_rounds": 984,
+      "independent_responses": 1816,
+      "independent_response_share": 0.2306910569105691,
+      "allocation_round_counts": {
+        "0": 530,
+        "4": 454
+      },
+      "technical_failure_ids": [
+        29,
+        324
+      ]
+    },
+    "edr_gated_random_s42": {
+      "trace": "benchmarks/MedXpertQA/qwen3.8 27b/traces/edr_gated_random_s42_490.jsonl",
+      "n": 490,
+      "correct": 216,
+      "accuracy": 0.44081632653061226,
+      "subsequent_rounds": 969,
+      "independent_responses": 1701,
+      "independent_response_share": 0.21942724458204335,
+      "allocation_round_counts": {
+        "0": 485,
+        "1": 87,
+        "2": 76,
+        "3": 82,
+        "4": 61,
+        "5": 96,
+        "6": 82
+      },
+      "technical_failure_ids": [
+        29
+      ]
+    },
+    "ma_rag_int_plus_edr": {
+      "trace": "benchmarks/MedXpertQA/qwen3.8 27b/traces/ma_rag_int_plus_edr_490.jsonl",
+      "n": 490,
+      "correct": 236,
+      "accuracy": 0.4816326530612245,
+      "subsequent_rounds": 861,
+      "independent_responses": 1286,
+      "independent_response_share": 0.18670150987224157,
+      "allocation_round_counts": {
+        "0": 484,
+        "1": 29,
+        "2": 66,
+        "3": 95,
+        "4": 99,
+        "5": 84,
+        "6": 4
+      },
+      "technical_failure_ids": [
+        29
+      ]
+    }
+  },
+  "first_retrieval_pairing_against_baseline": {
+    "edr_gated_fixed4": {
+      "same_initial_responses": 490,
+      "comparable_first_retrievals": 362,
+      "same_first_retrieval_document_sets": 362,
+      "same_first_retrieval_document_order": 362,
+      "same_first_retrieval_query_order": 362
+    },
+    "edr_gated_random_s42": {
+      "same_initial_responses": 490,
+      "comparable_first_retrievals": 362,
+      "same_first_retrieval_document_sets": 362,
+      "same_first_retrieval_document_order": 362,
+      "same_first_retrieval_query_order": 362
+    },
+    "ma_rag_int_plus_edr": {
+      "same_initial_responses": 490,
+      "comparable_first_retrievals": 362,
+      "same_first_retrieval_document_sets": 362,
+      "same_first_retrieval_document_order": 362,
+      "same_first_retrieval_query_order": 362
+    }
+  },
+  "ordered_prefix_paired_comparison": [
+    "edr_gated_fixed4",
+    "edr_gated_random_s42",
+    "ma_rag_int_plus_edr"
+  ]
+}

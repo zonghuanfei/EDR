@@ -1,0 +1,4564 @@
+{
+  "dataset": "MedXpertQA",
+  "model": "gemma-3-12b-it",
+  "metric": "exact final-option accuracy; technical failures and completed runs without one final option count as incorrect",
+  "conditions": {
+    "ma_rag_int": {
+      "correct": 74,
+      "total": 490,
+      "accuracy": 0.1510204081632653,
+      "completed": 486,
+      "technical_failure_ids": [
+        26,
+        94,
+        429,
+        438
+      ],
+      "completed_without_final_option_ids": []
+    },
+    "ma_rag_int_plus_edr": {
+      "correct": 93,
+      "total": 490,
+      "accuracy": 0.18979591836734694,
+      "completed": 484,
+      "technical_failure_ids": [
+        26,
+        120,
+        154,
+        197,
+        249,
+        438
+      ],
+      "completed_without_final_option_ids": [
+        52,
+        55,
+        170,
+        222,
+        312,
+        361,
+        403,
+        415
+      ]
+    }
+  },
+  "edr_vs_ma_rag_int": {
+    "repairs": 34,
+    "harms": 15,
+    "net_correct": 19,
+    "gain_percentage_points": 3.877551020408163,
+    "mcnemar_exact_two_sided_p": 0.009399241523873059,
+    "repair_ids": [
+      22,
+      27,
+      60,
+      74,
+      101,
+      107,
+      113,
+      114,
+      135,
+      136,
+      174,
+      180,
+      215,
+      235,
+      236,
+      279,
+      290,
+      302,
+      338,
+      357,
+      376,
+      379,
+      385,
+      388,
+      394,
+      396,
+      413,
+      428,
+      432,
+      445,
+      458,
+      463,
+      471,
+      485
+    ],
+    "harm_ids": [
+      31,
+      44,
+      93,
+      98,
+      106,
+      154,
+      156,
+      202,
+      231,
+      268,
+      303,
+      310,
+      384,
+      393,
+      415
+    ]
+  },
+  "paired_complete": {
+    "n": 482,
+    "baseline_correct": 73,
+    "edr_correct": 93,
+    "repairs": 34,
+    "harms": 14,
+    "mcnemar_exact_two_sided_p": 0.005515201485501109
+  },
+  "analysis": {
+    "first_round_disagreement": {
+      "n": 351,
+      "baseline_correct": 52,
+      "edr_correct": 71
+    },
+    "first_round_unanimous": {
+      "n": 138,
+      "baseline_correct": 22,
+      "edr_correct": 22
+    },
+    "first_round_unavailable_ids": [
+      438
+    ],
+    "active_independent_branch_questions": 225,
+    "active_independent_branch_rounds": 706,
+    "active_paired": {
+      "n": 219,
+      "baseline_correct": 32,
+      "edr_correct": 51,
+      "repairs": 33,
+      "harms": 14
+    },
+    "first_round_answer_matched": 489,
+    "first_round_transition_matched": 351,
+    "unpaired_first_round_ids": [
+      438
+    ],
+    "paired_bootstrap": {
+      "unit": "question",
+      "draws": 20000,
+      "seed": 20260918,
+      "difference": "EDR correct minus baseline correct, divided by 490",
+      "confidence_level": 0.95,
+      "percentile_interval": [
+        0.012244897959183673,
+        0.0673469387755102
+      ]
+    }
+  },
+  "rows": [
+    {
+      "id": 0,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 1,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 2,
+      "gold": "H",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 3,
+      "gold": "B",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 4,
+      "gold": "G",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 5,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 6,
+      "gold": "D",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 7,
+      "gold": "I",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 8,
+      "gold": "D",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 9,
+      "gold": "A",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 10,
+      "gold": "B",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 11,
+      "gold": "A",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 12,
+      "gold": "H",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 13,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 14,
+      "gold": "J",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 15,
+      "gold": "A",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 16,
+      "gold": "J",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 17,
+      "gold": "A",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 18,
+      "gold": "B",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 19,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 20,
+      "gold": "D",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 21,
+      "gold": "H",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 22,
+      "gold": "C",
+      "first_round_distinct": 5,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 23,
+      "gold": "D",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 24,
+      "gold": "H",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 25,
+      "gold": "G",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 26,
+      "gold": "D",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": null,
+      "ma_rag_int_plus_edr_prediction": null,
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 27,
+      "gold": "J",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 28,
+      "gold": "G",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 29,
+      "gold": "F",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 30,
+      "gold": "D",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 31,
+      "gold": "E",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 32,
+      "gold": "D",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 33,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 34,
+      "gold": "H",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 35,
+      "gold": "I",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 36,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 37,
+      "gold": "F",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 38,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 39,
+      "gold": "D",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 40,
+      "gold": "G",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 41,
+      "gold": "F",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 42,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 43,
+      "gold": "B",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 44,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 45,
+      "gold": "I",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 46,
+      "gold": "G",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 47,
+      "gold": "G",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 48,
+      "gold": "B",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 49,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 50,
+      "gold": "E",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 51,
+      "gold": "I",
+      "first_round_distinct": 5,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 52,
+      "gold": "C",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": null,
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 53,
+      "gold": "E",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 54,
+      "gold": "E",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 55,
+      "gold": "I",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": null,
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 56,
+      "gold": "B",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 57,
+      "gold": "F",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 58,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 59,
+      "gold": "D",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 60,
+      "gold": "F",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 61,
+      "gold": "F",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 62,
+      "gold": "I",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 63,
+      "gold": "D",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 64,
+      "gold": "E",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 65,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 66,
+      "gold": "A",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 67,
+      "gold": "B",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 68,
+      "gold": "H",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 69,
+      "gold": "G",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 70,
+      "gold": "G",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 71,
+      "gold": "F",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 72,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 73,
+      "gold": "A",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 74,
+      "gold": "D",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 75,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 76,
+      "gold": "I",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 77,
+      "gold": "A",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 78,
+      "gold": "B",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 79,
+      "gold": "F",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 80,
+      "gold": "H",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 81,
+      "gold": "A",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 82,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 83,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 84,
+      "gold": "H",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 85,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 86,
+      "gold": "C",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 87,
+      "gold": "B",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 88,
+      "gold": "F",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 89,
+      "gold": "H",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 90,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 91,
+      "gold": "F",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 92,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 93,
+      "gold": "I",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 94,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": null,
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 95,
+      "gold": "C",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 96,
+      "gold": "F",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 97,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 98,
+      "gold": "J",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 99,
+      "gold": "A",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 100,
+      "gold": "H",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 101,
+      "gold": "F",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 102,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 103,
+      "gold": "E",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 104,
+      "gold": "I",
+      "first_round_distinct": 5,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 105,
+      "gold": "A",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 106,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 107,
+      "gold": "J",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 108,
+      "gold": "H",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 109,
+      "gold": "J",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 110,
+      "gold": "E",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 111,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 112,
+      "gold": "J",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 113,
+      "gold": "J",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 114,
+      "gold": "G",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 115,
+      "gold": "D",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 116,
+      "gold": "B",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 117,
+      "gold": "H",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 118,
+      "gold": "H",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 119,
+      "gold": "H",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 120,
+      "gold": "H",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": null,
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 121,
+      "gold": "C",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 122,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 123,
+      "gold": "B",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 124,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 125,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 126,
+      "gold": "J",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 127,
+      "gold": "G",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 128,
+      "gold": "E",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 129,
+      "gold": "A",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 130,
+      "gold": "C",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 131,
+      "gold": "A",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 132,
+      "gold": "E",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 133,
+      "gold": "A",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 134,
+      "gold": "E",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 135,
+      "gold": "E",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 136,
+      "gold": "D",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 137,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 138,
+      "gold": "B",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 139,
+      "gold": "B",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 140,
+      "gold": "H",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 141,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 142,
+      "gold": "F",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 143,
+      "gold": "E",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 144,
+      "gold": "C",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 145,
+      "gold": "J",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 146,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 147,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 148,
+      "gold": "F",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 149,
+      "gold": "C",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 150,
+      "gold": "A",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 151,
+      "gold": "H",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 152,
+      "gold": "F",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 153,
+      "gold": "B",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 154,
+      "gold": "G",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": null,
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 155,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 156,
+      "gold": "G",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 157,
+      "gold": "G",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 158,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 159,
+      "gold": "C",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 160,
+      "gold": "E",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 161,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 162,
+      "gold": "B",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 163,
+      "gold": "H",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 164,
+      "gold": "H",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 165,
+      "gold": "D",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 166,
+      "gold": "D",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 167,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 168,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 169,
+      "gold": "D",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 170,
+      "gold": "A",
+      "first_round_distinct": 5,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": null,
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 171,
+      "gold": "B",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 172,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 173,
+      "gold": "E",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 174,
+      "gold": "D",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 175,
+      "gold": "A",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 176,
+      "gold": "C",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 177,
+      "gold": "C",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 178,
+      "gold": "F",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 179,
+      "gold": "A",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 180,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 181,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 182,
+      "gold": "I",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 183,
+      "gold": "D",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 184,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 185,
+      "gold": "E",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 186,
+      "gold": "J",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 187,
+      "gold": "J",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 188,
+      "gold": "B",
+      "first_round_distinct": 5,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 189,
+      "gold": "C",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 190,
+      "gold": "G",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 191,
+      "gold": "J",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 192,
+      "gold": "C",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 193,
+      "gold": "F",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 194,
+      "gold": "B",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 195,
+      "gold": "H",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 196,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 197,
+      "gold": "F",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": null,
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 198,
+      "gold": "B",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 199,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 200,
+      "gold": "A",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 201,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 202,
+      "gold": "B",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 203,
+      "gold": "J",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 204,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 205,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 206,
+      "gold": "B",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 207,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 208,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 209,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 210,
+      "gold": "H",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 211,
+      "gold": "A",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 212,
+      "gold": "I",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 213,
+      "gold": "D",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 214,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 215,
+      "gold": "B",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 216,
+      "gold": "E",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 217,
+      "gold": "G",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 218,
+      "gold": "D",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 219,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 220,
+      "gold": "C",
+      "first_round_distinct": 5,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 221,
+      "gold": "D",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 222,
+      "gold": "F",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": null,
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 223,
+      "gold": "E",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 224,
+      "gold": "D",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 225,
+      "gold": "D",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 226,
+      "gold": "E",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 227,
+      "gold": "G",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 228,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 229,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 230,
+      "gold": "C",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 231,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 232,
+      "gold": "D",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 233,
+      "gold": "D",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 234,
+      "gold": "F",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 235,
+      "gold": "A",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 236,
+      "gold": "D",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 237,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 238,
+      "gold": "J",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 239,
+      "gold": "C",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 240,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 241,
+      "gold": "D",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 242,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 243,
+      "gold": "I",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 244,
+      "gold": "E",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 245,
+      "gold": "G",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 246,
+      "gold": "F",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 247,
+      "gold": "H",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 248,
+      "gold": "H",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 249,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": null,
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 250,
+      "gold": "C",
+      "first_round_distinct": 5,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 251,
+      "gold": "A",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 252,
+      "gold": "J",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 253,
+      "gold": "C",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 254,
+      "gold": "B",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 255,
+      "gold": "A",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 256,
+      "gold": "B",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 257,
+      "gold": "G",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 258,
+      "gold": "J",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 259,
+      "gold": "I",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 260,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 261,
+      "gold": "I",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 262,
+      "gold": "B",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 263,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 264,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 265,
+      "gold": "A",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 266,
+      "gold": "F",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 267,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 268,
+      "gold": "C",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 269,
+      "gold": "E",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 270,
+      "gold": "D",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 271,
+      "gold": "E",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 272,
+      "gold": "A",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 273,
+      "gold": "I",
+      "first_round_distinct": 6,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 274,
+      "gold": "J",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 275,
+      "gold": "C",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 276,
+      "gold": "H",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 277,
+      "gold": "H",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 278,
+      "gold": "B",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 279,
+      "gold": "B",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 280,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 281,
+      "gold": "C",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 282,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 283,
+      "gold": "C",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 284,
+      "gold": "C",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 285,
+      "gold": "E",
+      "first_round_distinct": 5,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 286,
+      "gold": "H",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 287,
+      "gold": "J",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 288,
+      "gold": "I",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 289,
+      "gold": "G",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 290,
+      "gold": "J",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 291,
+      "gold": "F",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 292,
+      "gold": "A",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 293,
+      "gold": "G",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 294,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 295,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 296,
+      "gold": "D",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 297,
+      "gold": "H",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 298,
+      "gold": "F",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 299,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 300,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 301,
+      "gold": "J",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 302,
+      "gold": "B",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 303,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 304,
+      "gold": "F",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 305,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 306,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 307,
+      "gold": "A",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 308,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 309,
+      "gold": "B",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 310,
+      "gold": "C",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 311,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 312,
+      "gold": "D",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": null,
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 313,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 314,
+      "gold": "B",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 315,
+      "gold": "D",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 316,
+      "gold": "H",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 317,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 318,
+      "gold": "B",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 319,
+      "gold": "F",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 320,
+      "gold": "A",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 321,
+      "gold": "B",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 322,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 323,
+      "gold": "I",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 324,
+      "gold": "H",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 325,
+      "gold": "B",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 326,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 327,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 328,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 329,
+      "gold": "J",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 330,
+      "gold": "G",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 331,
+      "gold": "I",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 332,
+      "gold": "I",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 333,
+      "gold": "C",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 334,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 335,
+      "gold": "B",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 336,
+      "gold": "B",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 337,
+      "gold": "H",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 338,
+      "gold": "C",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 339,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 340,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 341,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 342,
+      "gold": "H",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 343,
+      "gold": "F",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 344,
+      "gold": "B",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 345,
+      "gold": "H",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 346,
+      "gold": "C",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 347,
+      "gold": "H",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 348,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 349,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 350,
+      "gold": "D",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 351,
+      "gold": "H",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 352,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 353,
+      "gold": "C",
+      "first_round_distinct": 5,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 354,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 355,
+      "gold": "F",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 356,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 357,
+      "gold": "C",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 358,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 359,
+      "gold": "A",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 360,
+      "gold": "D",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 361,
+      "gold": "G",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": null,
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 362,
+      "gold": "F",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 363,
+      "gold": "B",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 364,
+      "gold": "H",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 365,
+      "gold": "E",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 366,
+      "gold": "C",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 367,
+      "gold": "J",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 368,
+      "gold": "D",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 369,
+      "gold": "G",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 370,
+      "gold": "F",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 371,
+      "gold": "H",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 372,
+      "gold": "C",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 373,
+      "gold": "B",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 374,
+      "gold": "A",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 375,
+      "gold": "F",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 376,
+      "gold": "G",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 377,
+      "gold": "A",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 378,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 379,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 380,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 381,
+      "gold": "C",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 382,
+      "gold": "J",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 383,
+      "gold": "G",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 384,
+      "gold": "H",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 385,
+      "gold": "B",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 386,
+      "gold": "H",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 387,
+      "gold": "I",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 388,
+      "gold": "J",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 389,
+      "gold": "A",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 390,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 391,
+      "gold": "F",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 392,
+      "gold": "F",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 393,
+      "gold": "E",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 394,
+      "gold": "G",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 395,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 396,
+      "gold": "G",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 397,
+      "gold": "F",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 398,
+      "gold": "D",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 399,
+      "gold": "J",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 400,
+      "gold": "A",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 401,
+      "gold": "B",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 402,
+      "gold": "H",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 403,
+      "gold": "G",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": null,
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 404,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 405,
+      "gold": "D",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 406,
+      "gold": "F",
+      "first_round_distinct": 5,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 407,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 408,
+      "gold": "D",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 409,
+      "gold": "B",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 410,
+      "gold": "D",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 411,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 412,
+      "gold": "G",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 413,
+      "gold": "B",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 414,
+      "gold": "I",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 415,
+      "gold": "D",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": null,
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 416,
+      "gold": "G",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 417,
+      "gold": "H",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 418,
+      "gold": "A",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 419,
+      "gold": "F",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 420,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 421,
+      "gold": "H",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 422,
+      "gold": "J",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 423,
+      "gold": "F",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 424,
+      "gold": "H",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 425,
+      "gold": "J",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 426,
+      "gold": "I",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 427,
+      "gold": "G",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 428,
+      "gold": "H",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 429,
+      "gold": "A",
+      "first_round_distinct": 5,
+      "ma_rag_int_prediction": null,
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 430,
+      "gold": "I",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 431,
+      "gold": "F",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 432,
+      "gold": "C",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 433,
+      "gold": "A",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 434,
+      "gold": "A",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 435,
+      "gold": "A",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 436,
+      "gold": "C",
+      "first_round_distinct": 5,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 437,
+      "gold": "E",
+      "first_round_distinct": 5,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 438,
+      "gold": "C",
+      "first_round_distinct": null,
+      "ma_rag_int_prediction": null,
+      "ma_rag_int_plus_edr_prediction": null,
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 439,
+      "gold": "C",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 440,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 441,
+      "gold": "G",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 442,
+      "gold": "F",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 443,
+      "gold": "E",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 444,
+      "gold": "F",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 445,
+      "gold": "A",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 446,
+      "gold": "G",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 447,
+      "gold": "E",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "I",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 448,
+      "gold": "G",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 449,
+      "gold": "F",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 450,
+      "gold": "D",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 451,
+      "gold": "G",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 452,
+      "gold": "A",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 453,
+      "gold": "I",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 454,
+      "gold": "I",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 455,
+      "gold": "C",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 456,
+      "gold": "J",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 457,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 458,
+      "gold": "D",
+      "first_round_distinct": 5,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 459,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 460,
+      "gold": "H",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 461,
+      "gold": "B",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 462,
+      "gold": "J",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 463,
+      "gold": "E",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 464,
+      "gold": "A",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 465,
+      "gold": "E",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 466,
+      "gold": "J",
+      "first_round_distinct": 5,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 467,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 468,
+      "gold": "F",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 469,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 470,
+      "gold": "A",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "A",
+      "ma_rag_int_plus_edr_prediction": "A",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 471,
+      "gold": "I",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "I",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 472,
+      "gold": "C",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 473,
+      "gold": "B",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 474,
+      "gold": "G",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 475,
+      "gold": "J",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "E",
+      "ma_rag_int_plus_edr_prediction": "E",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 476,
+      "gold": "E",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 477,
+      "gold": "I",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 478,
+      "gold": "C",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "C",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 479,
+      "gold": "F",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 480,
+      "gold": "F",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "C",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 481,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "D",
+      "ma_rag_int_plus_edr_prediction": "D",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 482,
+      "gold": "E",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "J",
+      "ma_rag_int_plus_edr_prediction": "J",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 483,
+      "gold": "E",
+      "first_round_distinct": 4,
+      "ma_rag_int_prediction": "B",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 484,
+      "gold": "F",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 485,
+      "gold": "B",
+      "first_round_distinct": 2,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "B",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 486,
+      "gold": "H",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "H",
+      "ma_rag_int_plus_edr_prediction": "H",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    },
+    {
+      "id": 487,
+      "gold": "C",
+      "first_round_distinct": 3,
+      "ma_rag_int_prediction": "G",
+      "ma_rag_int_plus_edr_prediction": "G",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 488,
+      "gold": "E",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": false,
+      "ma_rag_int_plus_edr_correct": false
+    },
+    {
+      "id": 489,
+      "gold": "F",
+      "first_round_distinct": 1,
+      "ma_rag_int_prediction": "F",
+      "ma_rag_int_plus_edr_prediction": "F",
+      "ma_rag_int_correct": true,
+      "ma_rag_int_plus_edr_correct": true
+    }
+  ]
+}

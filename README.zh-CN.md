@@ -2,6 +2,10 @@
 
 [English](README.md) | 中文
 
+本仓库展示源码、说明与结果汇总。包含全部实验轨迹的
+[完整代码与轨迹包](https://github.com/zonghuanfei/EDR/releases/download/v1.0/EDR_Code_and_Trajectories.zip)
+可直接下载；下文的复算命令在解压后的数据包目录中运行。
+
 本数据包提供无需训练的EDR模块、框架适配器、逐题预测及推理轨迹，覆盖MedXpertQA、
 MedDDx-Expert、MMLU-Med三个医学基准，以及Qwen、Gemma两种模型和
 MA-RAG-int、MedLA两种协作架构。实验包括Gemma重复运行、门控固定4+4和随机分配消融及

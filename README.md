@@ -2,6 +2,10 @@
 
 English | [中文](README.zh-CN.md)
 
+The repository contains code, documentation and result summaries. Download the
+[complete code and trajectory package](https://github.com/zonghuanfei/EDR/releases/download/v1.0/EDR_Code_and_Trajectories.zip)
+for all experiment trajectories. Run the reproduction commands below from the extracted package directory.
+
 This package provides the training-free EDR module, framework adapters,
 question-level predictions and reasoning trajectories for MedXpertQA,
 MedDDx-Expert and MMLU-Med. Evaluations cover Qwen and Gemma,

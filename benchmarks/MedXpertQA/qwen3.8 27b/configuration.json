@@ -1,0 +1,85 @@
+{
+  "dataset": "MedXpertQA",
+  "questions": 490,
+  "labels": "ABCDEFGHIJ",
+  "model": {
+    "weights": "Inferact/Qwen3.8-27B-NVFP4",
+    "revision": "6128240ebaf4eaa7bad2b3d1c72c37d677c5f462",
+    "served_id": "qwen3.8-27b-nvfp4",
+    "tokenizer": "same model snapshot"
+  },
+  "solver": {
+    "temperature": 0.7,
+    "thinking": false,
+    "max_completion_tokens": 8192,
+    "responses_per_round": 8,
+    "max_rounds": 8,
+    "generation_seed": null
+  },
+  "query": {
+    "temperature": 0.0,
+    "thinking": true,
+    "max_completion_tokens": 8192,
+    "maximum_queries": 4
+  },
+  "probe": {
+    "temperature": 1.0,
+    "max_completion_tokens": 1,
+    "legal_options": "A-J",
+    "views": [
+      "E",
+      "H",
+      "EH"
+    ]
+  },
+  "retrieval": {
+    "corpus": "MedCorp",
+    "retriever": "BM25",
+    "reranker": "MedCPT",
+    "documents_per_query_before_rerank": 32,
+    "retained_per_query": 2,
+    "deduplication": "document ID, preserving first occurrence"
+  },
+  "edr": {
+    "max_independent": 6,
+    "total_solver_responses": 8,
+    "minimum_discussion": 2,
+    "mapping": "min(6, floor(6*s + 0.5)); zero for ties or unchanged top choice"
+  },
+  "random_allocation": {
+    "condition": "edr_gated_random",
+    "allocation_seed": 42,
+    "positive_route_trigger": "adaptive EDR count > 0 on this policy trajectory",
+    "independent_count_support": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "realized_allocations": "traces/edr_gated_random_s42_490.jsonl"
+  },
+  "pairing": {
+    "shared_initial_answers": true,
+    "shared_initial_entropy": true,
+    "first_retrieval_order": "baseline order",
+    "history_order": "descending entropy",
+    "technical_failure_ids": [
+      29
+    ],
+    "technical_failure_scoring": "incorrect in the full 490-question denominator",
+    "probe_outputs": "computed separately within each strategy trajectory"
+  },
+  "fixed_allocation": {
+    "condition": "edr_gated_fixed4",
+    "positive_route_trigger": "adaptive EDR count > 0 on this policy trajectory",
+    "independent_on_trigger": 4,
+    "discussion_on_trigger": 4,
+    "untriggered_allocation": [
+      0,
+      8
+    ],
+    "realized_allocations": "traces/edr_gated_fixed4_490.jsonl"
+  }
+}

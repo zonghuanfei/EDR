@@ -98,8 +98,8 @@ initial materials per valid question. The sole shared technical failure,
 ID 78, retains partial initial outputs and is counted incorrect in both arms.
 The four-option E/H/EH probability distributions, actual representative
 allocations and full generated subsequent answers follow the definitions above.
-`analysis_1089.json` reconstructs the benchmark, activated-subset, candidate
-coverage and discussion-depth metrics from these records.
+`analysis_1089.json` reconstructs benchmark outcomes, candidate coverage and
+discussion-depth metrics from these records.
 
 ## MedLA / Objective History Masking
 

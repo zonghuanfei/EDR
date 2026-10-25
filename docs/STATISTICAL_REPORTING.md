@@ -1,18 +1,23 @@
-# Accuracy and routing-active subset
+# Accuracy and questions with initial disagreement
 
-Full-benchmark accuracy uses the final option for every question. Missing or invalid final options and technical failures count as incorrect.
+Full-benchmark accuracy scores the final option for every question; missing or invalid final options and technical failures count as incorrect.
 
-A question is routing-active when at least one post-initial EDR round assigns one or more responses to the independent branch (`independent > 0`). The active-subset comparison uses both conditions' recorded final outcomes on those same question IDs.
+The initial-disagreement cohort comprises questions with shared valid initial answers and at least two distinct initial options: eight answers in MA-RAG-int and 17 in MedLA. Methods are compared on the same question IDs. Missing or invalid final answers on these questions count as incorrect.
 
-| Evaluation | Total questions | Full correct: baseline → EDR | Active questions | Active correct: baseline → EDR |
-| --- | ---: | ---: | ---: | ---: |
-| MedXpertQA / Qwen | 490 | 209 → 236 | 167 | 68 → 92 |
-| MedXpertQA / Gemma initial | 490 | 74 → 93 | 225 | 33 → 51 |
-| MedXpertQA / Gemma seed 2026091900 | 490 | 84 → 95 | 234 | 46 → 57 |
-| MedXpertQA / Gemma seed 2026091909 | 490 | 84 → 93 | 226 | 44 → 54 |
+| Evaluation | Questions | Baseline correct | EDR correct | Accuracy, baseline → EDR | Gain (pp) |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| MedXpertQA / Qwen | 363 | 162 | 189 | 44.63% → 52.07% | +7.44 |
+| MedXpertQA / Gemma initial | 351 | 52 | 71 | 14.81% → 20.23% | +5.41 |
+| MedDDx-Expert / Gemma | 468 | 125 | 140 | 26.71% → 29.91% | +3.21 |
+| MMLU-Med / Gemma | 767 | 465 | 501 | 60.63% → 65.32% | +4.69 |
+| MedXpertQA / Gemma seed 2026091900 | 341 | 62 | 73 | 18.18% → 21.41% | +3.23 |
+| MedXpertQA / Gemma seed 2026091909 | 356 | 64 | 73 | 17.98% → 20.51% | +2.53 |
+
+A correction is a baseline-incorrect/EDR-correct outcome; a regression is a baseline-correct/EDR-incorrect outcome. The correction rate divides corrections by baseline errors in the same cohort. Method comparisons use the same initial-disagreement cohort, and Gemma runs are summarized separately.
 
 ```bash
-python -B tools/build_routing_subset_analysis.py --check
+python -B tools/summarize_initial_disagreement.py
+python -B tools/summarize_initial_disagreement.py --check
 ```
 
-The corresponding `results/routing_subset_analysis.json` files contain the full-benchmark and routing-active summaries. Cross-framework results and candidate-evolution definitions are in [Unified EDR metrics](SYSTEMATIC_METRICS.md).
+[Results](../analysis/initial_disagreement_metrics.json) include question IDs, accuracy, corrections and regressions, paired bootstrap intervals, and two-sided exact McNemar tests, together with fixed-allocation, random-allocation and MAD-M²(O) comparisons. Full-benchmark results and candidate-evolution definitions are in [Unified metrics](SYSTEMATIC_METRICS.md).

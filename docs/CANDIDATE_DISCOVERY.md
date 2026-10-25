@@ -16,9 +16,7 @@ disappears and reappears. Discovery is distinct from final answer correctness.
 
 The denominator is the primary cohort size, determined from the shared initial
 choices. Invalid or unmatched initial pools are excluded from this diagnostic,
-not from the original full-benchmark scores. The JSON files also report all
-valid initially uncovered questions and the EDR-routing-active subgroup.
-Accuracy and routing-active subset definitions are in [Statistical reporting](STATISTICAL_REPORTING.md).
+not from the original full-benchmark scores. Accuracy on questions with initial disagreement is defined in [Statistical reporting](STATISTICAL_REPORTING.md).
 
 | Evaluation | Primary cohort | Baseline discoveries | EDR discoveries |
 | --- | ---: | ---: | ---: |
@@ -30,8 +28,7 @@ Accuracy and routing-active subset definitions are in [Statistical reporting](ST
 In the three Gemma runs, the first correct choice appears exclusively in the
 independent branch on 34, 30, and 41 questions, respectively. The files retain
 separate categories for discussion-only, both branches, and rounds without a
-branch label. They also record whether routing had activated by discovery.
-An eventual routing activation is not substituted for its timing.
+branch label.
 
 On Qwen MedXpertQA, gated random allocation discovers the correct option on
 17 of the same 100 questions, compared with 16 for EDR. The discovered option

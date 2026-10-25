@@ -1,7 +1,7 @@
 # Unified EDR Metrics Across Frameworks
 
-This analysis connects the final answer, actual routing intervention and
-candidate evolution using the trajectories retained in this package. It covers
+This analysis connects final accuracy on the full benchmark and on questions
+with initial disagreement to candidate evolution using the retained trajectories. It covers
 the four primary dataset/model/framework conditions and the two additional
 Gemma MedXpertQA runs, as well as the MAD-M² comparisons and gated-random
 allocation ablation.
@@ -32,16 +32,16 @@ The output contains no corpus passages or long generated answers.
 | --- | --- | --- |
 | Full accuracy and gain | Every released question in the run | Score the original final option against gold; a missing final option is incorrect. Gain is EDR accuracy minus baseline accuracy in percentage points. |
 | Relative accuracy gain | Full run | Increase in correct answers divided by baseline correct answers. |
-| Routing-active accuracy and gain | A: at least one recorded post-initial round assigns one or more independent answers | Compare both original final outcomes on the same question IDs. Include subsequent technical failures. |
-| Routing-active repair rate | Baseline errors within A | Baseline-incorrect/EDR-correct questions divided by all baseline errors in A. |
+| Accuracy and gain with initial disagreement | D: shared valid initial answers with at least two distinct options | Compare final outcomes on the same question IDs; missing final options count as incorrect. |
+| Correction rate with initial disagreement | Baseline errors within D | Baseline-incorrect/EDR-correct questions divided by all baseline errors in D. |
 | Correct-candidate loss | D with gold present initially and valid terminal medical-answer pools in both arms | Fraction whose terminal pool no longer contains gold, separately for baseline and EDR. |
 | Subsequent discovery | D with gold absent initially | Fraction with gold in at least one valid subsequent medical-answer round. Each question counts once. |
 | Early incorrect consensus | All of D | Wrong unanimous termination before the host's round cap: answer round 8 in MA-RAG, discussion round 3 in MedLA. |
 
 D contains questions with the same valid initial choices in both conditions
 and at least two distinct legal choices. It excludes initially unanimous
-questions and incomplete initial materials. A and D are recorded separately;
-the active set is defined by actual allocations, not merely by disagreement.
+questions and incomplete initial materials. Cohort membership is determined
+from the shared initial answers.
 
 A terminal pool is the final recorded medical-answer pool, rather than the
 most recent earlier complete round. An incomplete terminal pool or technical failure is excluded
@@ -49,7 +49,7 @@ from candidate-loss comparisons. In MedLA, a valid initial-only trajectory uses
 its initial pool as the terminal pool. Discovery can still be recorded from
 an earlier valid round when a later technical failure prevents completion.
 
-`routing_subset_analysis.json` files summarize full-benchmark and routing-active outcomes.
+[Initial-disagreement results](../analysis/initial_disagreement_metrics.json) summarize final accuracy, paired outcome changes and method comparisons on D. Recompute them with `python -B tools/summarize_initial_disagreement.py`.
 
 ## Complete-run results
 

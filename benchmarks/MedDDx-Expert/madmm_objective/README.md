@@ -25,6 +25,20 @@ There are 479 complete cases and four inherited shared-initial failures
 (63, 261, 307, 314). All four count as incorrect in every condition. They
 are not regenerated for MAD-M2. There are no new technical failures.
 
+## Final accuracy on questions with initial disagreement
+
+The three methods are compared on the same 468 questions whose shared valid initial answers contain at least two distinct options.
+
+| Condition | Correct / questions | Accuracy |
+| --- | ---: | ---: |
+| MedLA | 125 / 468 | 26.71% |
+| MedLA + MAD-M²(O) | 135 / 468 | 28.85% |
+| MedLA + EDR | 140 / 468 | 29.91% |
+
+EDR exceeds MAD-M²(O) by 1.07 percentage points.
+
+Question IDs and paired statistics are in [Initial-disagreement results](../../../analysis/initial_disagreement_metrics.json). Recompute from the package root with `python -B tools/summarize_initial_disagreement.py`.
+
 ## Transferred Mechanism
 
 The score follows the official `src/models.py` implementation:

@@ -16,16 +16,14 @@ history-conditioned discussion after the shared initial round.
 | MA-RAG-int | 74 / 490 | 15.10% | -- |
 | MA-RAG-int + EDR | **93 / 490** | **18.98%** | **+19 questions; +3.88 percentage points** |
 
-On the 225 routing-active questions, EDR repairs **33** baseline errors and
-changes **15** previously correct answers to incorrect ones, yielding a net
-gain of 18 questions. Accuracy within this activated subset increases from
-33/225 (14.67%) to 51/225 (22.67%), a gain of **8.00 percentage points**.
+EDR corrects 34 baseline errors and changes 15 previously correct answers to incorrect ones,
+yielding 19 additional correct answers.
 
 The [Qwen experiment](../qwen3.8%2027b/README.md) on the same 490 questions
 records a complete-benchmark gain from 209/490 to 236/490. Both models show
-positive full-benchmark and routing-active gains.
+positive gains on the full benchmark and on questions with initial disagreement.
 
-## Where the Difference Appears
+## Final accuracy on questions with initial disagreement
 
 The 489 questions with a valid eight-option initial decision include 351 with
 first-round disagreement and 138 with unanimous initial choices. Initial
@@ -41,11 +39,11 @@ incorrect. The endpoint comparison is:
 | Unanimous | 138 | 22 | 22 | 0 |
 | Invalid initial option parsing | 1 | 0 | 0 | 0 |
 
-EDR activates its independent evidence-only branch on 225 questions and 706
-subsequent rounds. On this activated subset, MA-RAG-int gets 33 correct and EDR
-gets 51 correct: 33 repairs, 15 harms, and a net gain of 18 questions. The
-observed improvement is concentrated in questions where EDR changes the
-independent/discussion allocation.
+On the 351 questions with shared valid initial answers and at least two distinct options,
+accuracy increases from 52/351 (14.81%) to 71/351 (20.23%), a gain of **5.41 percentage points**.
+EDR corrects 34 of 299 baseline errors (11.37%), with 15 answer regressions.
+
+Question IDs and paired statistics are in [Initial-disagreement results](../../../analysis/initial_disagreement_metrics.json). Recompute from the package root with `python -B tools/summarize_initial_disagreement.py`.
 
 Three Gemma runs are summarized in [multiseed/README.md](multiseed/README.md).
 All three show positive full-benchmark gains.
@@ -56,7 +54,9 @@ The [MAD-M2 objective comparison](madmm_objective/README.md) transfers the
 published objective history selector to this same MA-RAG-int host and shared
 initial material. The 490-question observed endpoint scores are baseline
 74/490, objective masking 78/490 and EDR 93/490. EDR exceeds this comparator
-by 15 correct answers (+3.06 percentage points). Its separate directory
+by 15 correct answers (+3.06 percentage points). On the 351 initial-disagreement
+questions, objective masking answers 56 correctly (15.95%) and EDR answers 71
+(20.23%), a 4.27-point difference. Its separate directory
 contains full generated answers, per-round masks and an execution audit;
 the original baseline and EDR trajectories remain unchanged.
 
@@ -72,9 +72,7 @@ terminations fall from **294 to 217**. Here, early incorrect consensus means
 that all eight responses select the same wrong option and terminate in rounds
 2-7, before the eight-round limit. On 155 questions, EDR remains non-unanimous
 at the round where the baseline has already stopped incorrectly. It repairs
-**28 of these 155 questions (18.06%)** through continued reasoning. The
-independent branch is active by that comparison round on 140 of these
-questions, including 27 subsequent repairs.
+**28 of these 155 questions (18.06%)** through continued reasoning.
 
 Question 27 provides a concrete example. The gold answer is J, and both
 conditions start from the same eight responses:

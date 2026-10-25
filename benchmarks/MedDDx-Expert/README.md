@@ -16,10 +16,7 @@ The released Expert/hard split was evaluated in full, with no question selection
 | EDR gain | +15 | **+3.11 percentage points** |
 
 EDR increases accuracy by **11.11% relative to the baseline**. Paired outcome
-changes comprise **30 repairs and 15 harms**. Every repaired question actually
-activated the independent branch. Questions without an EDR intervention have
-identical baseline and EDR predictions, supported by request-validated replay
-of the common execution prefix.
+changes comprise **30 corrections and 15 answer regressions**.
 
 The full-benchmark paired-bootstrap 95% confidence interval for the gain is
 **[+0.41, +5.80] percentage points**; the exact two-sided McNemar test gives
@@ -33,21 +30,24 @@ no final prediction in either condition and count as incorrect in both.
 Thus the headline denominator is 483, including all four failures; 479
 questions have complete paired reasoning trajectories.
 
-## Where EDR Acts
+## Final accuracy on questions with initial disagreement
+
+Of the 479 questions with valid shared initial answers, 468 contain at least two distinct
+options and 11 are unanimous. Final outcomes are compared on the same initial-disagreement cohort.
 
 | Evaluation group | Questions | Baseline correct | EDR correct | Accuracy gain |
 | --- | ---: | ---: | ---: | ---: |
 | Full benchmark | 483 | 135 | 150 | +3.11 pp |
-| Initial disagreement | 468 | 125 | 140 | +3.21 pp |
-| EDR-active questions | 274 | 60 | 75 | **+5.47 pp** |
-| Valid, routing-inactive questions | 205 | 75 | 75 | 0.00 pp |
+| Initial disagreement | 468 | 125 | 140 | **+3.21 pp** |
 | Initial unanimity | 11 | 10 | 10 | 0.00 pp |
 
-Initial-disagreement and initial-unanimity counts use the 479 questions with
-valid initial materials. EDR activates on 57.20% of those questions, making
-804 history-masked generations and 2,346 three-view probability probes.
-Per-call replay counts
-are in [results/execution_audit.json](results/execution_audit.json).
+On the initial-disagreement questions, accuracy increases from 26.71% to 29.91%.
+EDR corrects 30 of 343 baseline errors (8.75%), with 15 answer regressions.
+
+Question IDs and paired statistics are in [Initial-disagreement results](../../analysis/initial_disagreement_metrics.json). Recompute from the package root with `python -B tools/summarize_initial_disagreement.py`.
+
+EDR generates 804 history-masked responses and makes 2,346 three-view probability probes.
+Per-call counts are in [results/execution_audit.json](results/execution_audit.json).
 
 ## Mechanism Evidence
 
@@ -157,7 +157,8 @@ See [integration instructions](../../docs/INTEGRATION.md).
 | File | Contents |
 | --- | --- |
 | `results/final_scores_483.json` | Aggregate scores and all 483 paired final predictions/correctness flags |
-| `results/analysis_483.json` | Repair/harm IDs, active-subset metrics, reasoning depth, candidate coverage and paired statistics |
+| [Initial-disagreement results](../../analysis/initial_disagreement_metrics.json) | Paired accuracy, corrections and method comparisons on initial-disagreement questions |
+| `results/analysis_483.json` | Repair/harm IDs, reasoning depth, candidate coverage and paired statistics |
 | `results/execution_audit.json` | Raw-request verification of actual masks, common-prefix replay and option probes |
 | `results/technical_failures.json` | The four shared initial failures and their scoring/retry status |
 | `traces/shared_initial_483.jsonl` | Initial 17 accepted elimination reasonings and logic reports, plus shared retrieval IDs/titles/scores; partial outputs for failures |
@@ -176,7 +177,9 @@ adds **145/483 (30.02%)** for MedLA + objective history masking, against
 **135/483 (27.95%)** for MedLA and **150/483 (31.06%)** for MedLA + EDR.
 All three conditions share the same initial materials and retrieval evidence.
 Relative to MAD-M2, EDR gains **1.04 percentage points**; MAD-M2 itself gains
-**2.07 points** over the baseline. Its 483 generated trajectories, screening
+**2.07 points** over the baseline. On the 468 initial-disagreement questions,
+objective masking answers 135 correctly (28.85%) and EDR answers 140 (29.91%),
+a 1.07-point difference. Its 483 generated trajectories, screening
 scores and masks are stored in the child directory. The original baseline/EDR
 results and traces above are unchanged.
 

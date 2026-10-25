@@ -26,20 +26,22 @@ MAD-M²客观历史屏蔽对照。数据来源和推理设置见各目录的`DAT
 | MMLU-Med / Gemma | 1089 | 766 | 802 | 70.34%→**73.65%** | **+3.31** |
 
 MedXpertQA的基线为MA-RAG-int；MedDDx-Expert、MMLU-Med的基线为采用共享
-MedCorp证据接口的MedLA。统计集合、配对检验与候选演化结果见[统一统计说明](docs/SYSTEMATIC_METRICS.md)。
+MedCorp证据接口的MedLA。全量配对检验与候选演化结果见[统一统计说明](docs/SYSTEMATIC_METRICS.md)。
 
-## 路由激活题的纠错
+## 首轮分歧题目的最终准确率
 
-至少一个后续轮次实际分配独立回答的题目构成激活集合，两组比较同一批题目。
+该集合包含两组共享有效首轮回答、且首轮出现至少两个不同选项的题目。各方法在同一批题目上比较最终答案；入选题目后续缺失或无效的终答计错。
 
-| 实验 | 激活题数 | 正确数：基线→EDR | 增益 (pp) |
-| --- | ---: | ---: | ---: |
-| MedXpertQA / Qwen | 167 | 68→92 | **+14.37** |
-| MedXpertQA / Gemma 初始运行 | 225 | 33→51 | **+8.00** |
-| MedDDx-Expert / Gemma | 274 | 60→75 | **+5.47** |
-| MMLU-Med / Gemma | 264 | 111→147 | **+13.64** |
+| 实验 | 题数 | 正确数：基线→EDR | 准确率：基线→EDR | 增益 (pp) |
+| --- | ---: | ---: | ---: | ---: |
+| MedXpertQA / Qwen | 363 | 162 → 189 | 44.63% → **52.07%** | **+7.44** |
+| MedXpertQA / Gemma 初始运行 | 351 | 52 → 71 | 14.81% → **20.23%** | **+5.41** |
+| MedXpertQA / Gemma seed 2026091900 | 341 | 62 → 73 | 18.18% → **21.41%** | **+3.23** |
+| MedXpertQA / Gemma seed 2026091909 | 356 | 64 → 73 | 17.98% → **20.51%** | **+2.53** |
+| MedDDx-Expert / Gemma | 468 | 125 → 140 | 26.71% → **29.91%** | **+3.21** |
+| MMLU-Med / Gemma | 767 | 465 → 501 | 60.63% → **65.32%** | **+4.69** |
 
-完整题集与激活子集分别报告，定义见[统计报告口径](docs/STATISTICAL_REPORTING.zh-CN.md)。
+题目编号与配对统计见[首轮分歧统计](analysis/initial_disagreement_metrics.json)。在源码包根目录运行 `python -B tools/summarize_initial_disagreement.py` 可复算。
 
 ## 候选演化
 
@@ -81,6 +83,7 @@ EDR生成**1,286对1,701**个独立回答，执行**861对969**个后续轮次�
 - `src/medla_transfer/`：MedLA接入器及离线测试。
 - `benchmarks/`：完整题目覆盖、推理轨迹、预测与成绩。
 - `analysis/systematic_edr_metrics.json`：统一结果与逐题事件。
+- `analysis/initial_disagreement_metrics.json`：首轮分歧题目的准确率、纠错与方法对照。
 - `docs/`：方法、统计定义、轨迹格式与接入说明。
 - `tools/`：离线分析与结果复算。
 
@@ -93,6 +96,7 @@ python -B tools/build_medxpertqa_results.py --check
 python -B src/test_random_allocation.py
 python -B tools/analyze_systematic_metrics.py --output analysis/systematic_edr_metrics.json
 python -B tools/test_systematic_metrics.py
+python -B tools/summarize_initial_disagreement.py
 python -B tools/verify_package.py
 ```
 

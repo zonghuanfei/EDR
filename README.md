@@ -30,23 +30,25 @@ predictions and technical failures count as incorrect.
 
 Baselines are MA-RAG-int for MedXpertQA, and MedLA with the
 shared MedCorp evidence interface for MedDDx-Expert and MMLU-Med.
-[Unified metrics](docs/SYSTEMATIC_METRICS.md) define all evaluation sets and
-provide the paired statistics and candidate-evolution results.
+[Unified metrics](docs/SYSTEMATIC_METRICS.md) provide full-benchmark paired
+statistics and candidate-evolution results.
 
-## Routing-active correction
+## Final accuracy on questions with initial disagreement
 
-A question is active when a subsequent round assigns at least one independent
-answer. Both conditions are compared on those same IDs.
+This cohort contains questions with shared valid initial answers and at least two distinct
+initial options. Methods are compared on the same question IDs; missing or invalid final
+answers on these questions count as incorrect.
 
-| Evaluation | Active questions | Correct, baseline → EDR | Gain (pp) |
-| --- | ---: | ---: | ---: |
-| MedXpertQA / Qwen | 167 | 68 → 92 | **+14.37** |
-| MedXpertQA / Gemma initial | 225 | 33 → 51 | **+8.00** |
-| MedDDx-Expert / Gemma | 274 | 60 → 75 | **+5.47** |
-| MMLU-Med / Gemma | 264 | 111 → 147 | **+13.64** |
+| Evaluation | Questions | Correct, baseline → EDR | Accuracy, baseline → EDR | Gain (pp) |
+| --- | ---: | ---: | ---: | ---: |
+| MedXpertQA / Qwen | 363 | 162 → 189 | 44.63% → **52.07%** | **+7.44** |
+| MedXpertQA / Gemma initial | 351 | 52 → 71 | 14.81% → **20.23%** | **+5.41** |
+| MedXpertQA / Gemma seed 2026091900 | 341 | 62 → 73 | 18.18% → **21.41%** | **+3.23** |
+| MedXpertQA / Gemma seed 2026091909 | 356 | 64 → 73 | 17.98% → **20.51%** | **+2.53** |
+| MedDDx-Expert / Gemma | 468 | 125 → 140 | 26.71% → **29.91%** | **+3.21** |
+| MMLU-Med / Gemma | 767 | 465 → 501 | 60.63% → **65.32%** | **+4.69** |
 
-Complete-benchmark and routing-active outcomes are reported separately; see
-[Statistical reporting](docs/STATISTICAL_REPORTING.md) for their definitions.
+Question IDs and paired statistics are in [Initial-disagreement results](analysis/initial_disagreement_metrics.json). Recompute from the package root with `python -B tools/summarize_initial_disagreement.py`.
 
 ## Candidate evolution
 
@@ -99,6 +101,7 @@ See [allocation results](docs/ALLOCATION_ABLATION.md).
 - `src/medla_transfer/`: native MedLA adapters and offline tests.
 - `benchmarks/`: predictions, complete question coverage, reasoning traces and scores.
 - `analysis/systematic_edr_metrics.json`: unified results and per-question events.
+- `analysis/initial_disagreement_metrics.json`: final accuracy, corrections and method comparisons on initial-disagreement questions.
 - `docs/`: methods, statistical definitions, trace schema and integration notes.
 - `tools/`: offline statistics and result checks.
 
@@ -114,6 +117,7 @@ python -B tools/build_medxpertqa_results.py --check
 python -B src/test_random_allocation.py
 python -B tools/analyze_systematic_metrics.py --output analysis/systematic_edr_metrics.json
 python -B tools/test_systematic_metrics.py
+python -B tools/summarize_initial_disagreement.py
 python -B tools/verify_package.py
 ```
 

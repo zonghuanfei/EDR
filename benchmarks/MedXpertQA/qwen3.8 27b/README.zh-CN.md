@@ -61,10 +61,22 @@ EDR少生成24.4%的独立回答，少执行11.1%的后续轮次，同时多答�
 [轨迹](traces/edr_gated_fixed4_490.jsonl)保留全部490个题号。
 固定分配、随机分配及EDR的汇总见[分配消融结果](../../../docs/ALLOCATION_ABLATION.md)。
 
-## 激活题与候选演化
+## 首轮分歧题目的最终准确率
 
-EDR在167题中实际启用独立分支，基线与EDR在这些题上分别答对68和92题，提高14.37个百分点。
-定义见[统计说明](../../../docs/STATISTICAL_REPORTING.zh-CN.md)。
+四种多智能体策略共享首轮回答；以下结果均在363道首轮存在分歧的题目上计算。后续未得到有效终答的题目计错。
+
+| 条件 | 正确数 / 题数 | 准确率 | 相对MA-RAG-int增益 |
+| --- | ---: | ---: | ---: |
+| MA-RAG-int | 162 / 363 | 44.63% | — |
+| 门控固定4+4 | 167 / 363 | 46.01% | +1.38 pp |
+| 门控随机分配，种子42 | 169 / 363 | 46.56% | +1.93 pp |
+| MA-RAG-int + EDR | 189 / 363 | 52.07% | +7.44 pp |
+
+EDR纠正了201个基线错误中的34个（16.92%），另有7题由对变错。相对固定4+4和随机分配，EDR的准确率分别提高6.06和5.51个百分点。
+
+题目编号与配对统计见[首轮分歧统计](../../../analysis/initial_disagreement_metrics.json)。在源码包根目录运行 `python -B tools/summarize_initial_disagreement.py` 可复算。
+
+## 候选演化
 
 | 过程指标 | 基线 | EDR | 随机s42 | 统计集合 |
 | --- | ---: | ---: | ---: | --- |
@@ -85,7 +97,7 @@ EDR在167题中实际启用独立分支，基线与EDR在这些题上分别答�
 | [results/ma_rag_int_plus_edr_490.json](results/ma_rag_int_plus_edr_490.json) | EDR逐题预测与成绩 |
 | [results/edr_gated_random_s42_490.json](results/edr_gated_random_s42_490.json) | 随机分配逐题预测与成绩 |
 | [results/comparisons.json](results/comparisons.json) | 完整运行的配对变化、区间及分配数量 |
-| [results/routing_subset_analysis.json](results/routing_subset_analysis.json) | 完整题集与激活子集汇总 |
+| [首轮分歧统计](../../../analysis/initial_disagreement_metrics.json) | 首轮分歧题目的配对准确率、纠错及分配策略对照 |
 | [results/candidate_discovery.json](results/candidate_discovery.json) | 候选发现集合及逐题事件 |
 | `traces/` | 完整生成回答、决策、路由与检索元数据 |
 

@@ -79,11 +79,24 @@ Its [score](results/edr_gated_fixed4_490.json) and
 The [allocation summary](../../../docs/ALLOCATION_ABLATION.md) reports it
 alongside random allocation and EDR.
 
-## Routing-active and candidate outcomes
+## Final accuracy on questions with initial disagreement
 
-EDR activates independence on 167 questions. On those IDs, baseline and EDR
-answer 68 and 92 questions correctly, respectively: a 14.37-point gain.
-Definitions are in [Statistical reporting](../../../docs/STATISTICAL_REPORTING.md).
+The four multi-agent policies share their initial answers. The following results use
+the same 363 questions with initial disagreement, with missing or invalid final answers scored incorrect.
+
+| Condition | Correct / questions | Accuracy | Gain over MA-RAG-int |
+| --- | ---: | ---: | ---: |
+| MA-RAG-int | 162 / 363 | 44.63% | — |
+| Gated fixed 4+4 | 167 / 363 | 46.01% | +1.38 pp |
+| Gated random allocation, seed 42 | 169 / 363 | 46.56% | +1.93 pp |
+| MA-RAG-int + EDR | 189 / 363 | 52.07% | +7.44 pp |
+
+EDR corrects 34 of 201 baseline errors (16.92%), with seven answer regressions.
+Its accuracy exceeds fixed 4+4 and random allocation by 6.06 and 5.51 percentage points, respectively.
+
+Question IDs and paired statistics are in [Initial-disagreement results](../../../analysis/initial_disagreement_metrics.json). Recompute from the package root with `python -B tools/summarize_initial_disagreement.py`.
+
+## Candidate evolution
 
 | Process outcome | Baseline | EDR | Random s42 | Comparison set |
 | --- | ---: | ---: | ---: | --- |
@@ -106,7 +119,7 @@ terminal pools; full accuracy still includes all 490 questions.
 | [results/ma_rag_int_plus_edr_490.json](results/ma_rag_int_plus_edr_490.json) | EDR predictions and score |
 | [results/edr_gated_random_s42_490.json](results/edr_gated_random_s42_490.json) | Random-allocation predictions and score |
 | [results/comparisons.json](results/comparisons.json) | Complete-run paired changes, uncertainty and allocation counts |
-| [results/routing_subset_analysis.json](results/routing_subset_analysis.json) | Full-benchmark and routing-active summaries |
+| [Initial-disagreement results](../../../analysis/initial_disagreement_metrics.json) | Paired accuracy, corrections and allocation-policy comparisons on initial-disagreement questions |
 | [results/candidate_discovery.json](results/candidate_discovery.json) | Discovery cohorts and per-question events |
 | `traces/` | Full generated answers, decisions, routing and retrieval metadata |
 

@@ -30,6 +30,20 @@ outcome. All changed outcomes occur on questions where objective masking ran.
 Predictions and paired change IDs for all 490 questions are in
 [results/final_scores_490.json](results/final_scores_490.json).
 
+## Final accuracy on questions with initial disagreement
+
+The three methods are compared on the same 351 questions whose shared valid initial answers contain at least two distinct options.
+
+| Condition | Correct / questions | Accuracy |
+| --- | ---: | ---: |
+| MA-RAG-int | 52 / 351 | 14.81% |
+| MA-RAG-int + MAD-M²(O) | 56 / 351 | 15.95% |
+| MA-RAG-int + EDR | 71 / 351 | 20.23% |
+
+EDR exceeds MAD-M²(O) by 4.27 percentage points.
+
+Question IDs and paired statistics are in [Initial-disagreement results](../../../../analysis/initial_disagreement_metrics.json). Recompute from the package root with `python -B tools/summarize_initial_disagreement.py`.
+
 ## Transferred Mechanism
 
 For each preceding answer, the score is the geometric mean of the

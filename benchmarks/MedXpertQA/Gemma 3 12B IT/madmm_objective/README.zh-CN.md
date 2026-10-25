@@ -23,6 +23,20 @@
 
 全490题的逐题预测及修复、误伤编号见 [results/final_scores_490.json](results/final_scores_490.json)。
 
+## 首轮分歧题目的最终准确率
+
+以下三种方法在同一批351道题目上比较，集合由共享有效首轮回答中至少出现两个不同选项确定。
+
+| 条件 | 正确数 / 题数 | 准确率 |
+| --- | ---: | ---: |
+| MA-RAG-int | 52 / 351 | 14.81% |
+| MA-RAG-int + MAD-M²(O) | 56 / 351 | 15.95% |
+| MA-RAG-int + EDR | 71 / 351 | 20.23% |
+
+EDR较MAD-M²(O)提高4.27个百分点。
+
+题目编号与配对统计见[首轮分歧统计](../../../../analysis/initial_disagreement_metrics.json)。在源码包根目录运行 `python -B tools/summarize_initial_disagreement.py` 可复算。
+
 ## 运行机制
 
 每份上一轮回答，从每个生成位置取概率最高 token 的对数概率，再计算：

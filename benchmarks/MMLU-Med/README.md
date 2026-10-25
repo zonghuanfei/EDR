@@ -16,10 +16,8 @@ completed on 3 October 2026. Dataset identity is recorded in [DATASET.md](DATASE
 | MedLA + shared evidence + EDR | 802 / 1,089 | 73.65% |
 | EDR gain | +36 | **+3.31 percentage points** |
 
-EDR repairs **48** baseline errors and introduces **12** harms. All 48 repairs
-actually activate the independent branch. The relative accuracy increase is
-4.70%. On routing-inactive questions, baseline and EDR endpoints are identical,
-with request-validated common-prefix replay until the first history removal.
+EDR corrects **48** baseline errors and introduces **12** answer regressions.
+The relative accuracy increase is 4.70%.
 
 The paired-question bootstrap 95% interval is **[+1.93, +4.68] percentage
 points**; the exact two-sided McNemar p-value is **3.18e-6**. The analysis uses
@@ -30,18 +28,25 @@ Question 78 has a shared initial-stage technical failure. It has no final
 prediction in either condition and counts as
 incorrect in both. All 1,089 IDs are retained; 1,088 have complete paired traces.
 
-## Intervention and Continued Reasoning
+## Final accuracy on questions with initial disagreement
+
+Of the questions with valid shared initial answers, 767 contain at least two distinct
+options and 321 are unanimous. Final outcomes are compared on the same initial-disagreement cohort.
 
 | Group | Questions | Baseline correct | EDR correct | Gain |
 | --- | ---: | ---: | ---: | ---: |
 | Full benchmark | 1,089 | 766 | 802 | +3.31 pp |
-| EDR-active | 264 | 111 | 147 | **+13.64 pp** |
-| Valid, routing-inactive | 824 | 655 | 655 | 0.00 pp |
+| Initial disagreement | 767 | 465 | 501 | **+4.69 pp** |
 
-Among valid initial materials, 767 questions have disagreement and 321 are
-unanimous. EDR activates on 264 questions, or 24.26% of complete pairs, and
-makes **560 history-masked generations**, with 3,189 three-view option probes.
-Per-call replay counts are in [results/execution_audit.json](results/execution_audit.json).
+On the initial-disagreement questions, accuracy increases from 60.63% to 65.32%.
+EDR corrects 48 of 302 baseline errors (15.89%), with 12 answer regressions.
+
+Question IDs and paired statistics are in [Initial-disagreement results](../../analysis/initial_disagreement_metrics.json). Recompute from the package root with `python -B tools/summarize_initial_disagreement.py`.
+
+EDR generates 560 history-masked responses and makes 3,189 three-view option probes.
+Per-call counts are in [results/execution_audit.json](results/execution_audit.json).
+
+## Continued reasoning
 
 | Trajectory measure | Baseline | EDR |
 | --- | ---: | ---: |
@@ -103,7 +108,8 @@ MedLA workflow are the same as the MedDDx-Expert transfer. See
 | File | Contents |
 | --- | --- |
 | `results/final_scores_1089.json` | Both scores and all paired predictions/correctness flags |
-| `results/analysis_1089.json` | Repair/harm IDs, active-subset metrics, candidate coverage, depth and paired statistics |
+| [Initial-disagreement results](../../analysis/initial_disagreement_metrics.json) | Paired accuracy, corrections and method comparisons on initial-disagreement questions |
+| `results/analysis_1089.json` | Repair/harm IDs, candidate coverage, depth and paired statistics |
 | `results/execution_audit.json` | Raw-request verification of masks, common-prefix replay and four-option probes |
 | `results/technical_failures.json` | Shared initial failure and its scoring status |
 | `traces/shared_initial_1089.jsonl` | Initial medical reasoning and logic reports once per question; document IDs/titles/scores |
